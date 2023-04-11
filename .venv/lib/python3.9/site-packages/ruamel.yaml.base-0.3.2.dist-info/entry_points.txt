@@ -1,0 +1,2 @@
+[console_scripts]
+base = ruamel.yaml.base.__main__:main

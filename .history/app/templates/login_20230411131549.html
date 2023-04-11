@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    
+    <style>
+      h2 {
+        font-family: 'Montserrat', sans-serif;
+      }
+
+      .header {
+        display: inline-flex;
+      }
+
+      .login {
+        display: inline-flex;
+        float: right;
+      }
+
+      p {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 28px;
+        font-weight: 200;
+        text-align: left;
+      }
+
+
+      .login-button {
+        background-color: rgb(202, 202, 214);
+        border: none;
+        height: 35px;
+        width: 60px;
+        border-radius: 10px;
+        cursor: pointer;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 18px;
+        transition: opacity 0.15s;
+        padding: 5px;
+      }
+
+      .login-button:hover {
+        opacity: 0.8;
+      }
+
+      .login-button:active {
+        opacity: 0.5;
+      }
+
+
+      .create-button {
+        background-color: rgb(202, 202, 214);
+        border: none;
+        height: 35px;
+        width: 160px;
+        border-radius: 10px;
+        cursor: pointer;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 18px;
+        transition: opacity 0.15s;
+        padding: 5px;
+      }
+
+      .create-button:hover {
+        opacity: 0.8;
+      }
+
+      .create-button:active {
+        opacity: 0.5;
+      }
+    
+
+      .username {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        width: 150px;
+        padding: 2px;
+      }
+
+      .password {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 15px;
+        width: 150px;
+        padding: 2px;
+      }
+
+      .box {
+        padding-top: 25px;
+      }
+
+      .inside-box {
+        background-color: rgb(206, 228, 235);
+        margin: auto;
+        width: 50%;
+        border-radius: 10px;
+        padding-left: 70px;
+        padding-top: 30px;
+        padding-bottom: 10%; 
+        display: inline-block;       
+      }
+    </style>
+  </head>
+  <body>
+    <h2>
+      <div class="header">
+        SymptoCheck | Find solutions for your symptoms
+      </div>
+      <div class="login">
+          <a href = "{{url_for('accpage')}}">Account Home</a>
+      </div>
+    </h3>
+    <hr>
+    <div class="box">
+      <div class="inside-box">
+        <form id = "user_action" method = "post" action = '/login/identify'>
+          <p>
+             Welcome to SymptoCheck!
+          </p>
+          <p>
+            <label class="username"  for="username">username: </label> 
+          <input class="username" name = "username" type="text" placeholder=" ">
+         </p>
+         
+         <div >
+          <label class="password" for="pass">password: </label>
+          <input class="password" type="password" id="password" name="password">
+      </div>
+          <div class="login-button">
+            <input type="submit" value="Login" >
+          </div> 
+        </form>
+          <div class="create-button">
+            <a href = "{{url_for('register')}}">Create Account</a>
+          </div>
+         
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Account Home</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    
+    <style>
+      h2 {
+        font-family: 'Montserrat', sans-serif;
+      }
+      h3 {
+        font-family: 'Montserrat', sans-serif;
+      }
+      .header {
+        display: inline-flex;
+      }
+
+      .login {
+        display: inline-flex;
+        float: right;
+      }
+
+      p {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 20px;
+        font-weight: 200;
+        text-align: left;
+      }
+      
+      .select-sex {
+        font-family: 'Montserrat', sans-serif;
+      }
+
+
+      button {
+        background-color: rgb(202, 202, 214);
+        border: none;
+        height: 35px;
+        width: 60px;
+        border-radius: 10px;
+        cursor: pointer;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 18px;
+        transition: opacity 0.15s;
+        padding: 5px;
+      }
+    
+      button:hover {
+        opacity: 0.8;
+      }
+
+      button:active {
+        opacity: 0.5;
+      }
+
+      .delete-button {
+        background-color: rgb(245, 97, 97);
+        width: 160px;
+      }
+
+      .record-button {
+        width: 170px;
+      }
+
+
+      table {
+        font-family: 'Montserrat', sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+
+    }
+    th {
+        font-weight: 1400;
+        text-align: left;
+    padding: 8px;
+    }
+
+    td {
+
+    text-align: left;
+    padding: 8px;
+    }
+        
+      .box {
+        padding-top: 25px;
+      }
+
+      .inside-box {
+        background-color: rgb(206, 228, 235);
+        margin: auto;
+        width: 50%;
+        border-radius: 10px;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 30px;
+        padding-bottom: 10%; 
+        display: inline-block;       
+      }
+    </style>
+  </head>
+  <body>
+    <h2>
+      <div class="header">
+        SymptoCheck | Find solutions for your symptoms
+      </div>
+
+    </h3>
+    <hr>
+    <div class="box">
+      <script>
+        function toggleForm() {
+          var form = document.getElementById("myForm");
+          form.style.display = form.style.display === "none" ? "block" : "none";
+        }
+      </script>
+    </head>
+    <body>
+      <button class = "record-button" onclick="toggleForm()">Enter New Record</button>
+      <form id="myForm" style="display:none;">
+        <label for="name">Enter your name:</label>
+        <input type="text" id="name" name="name">
+        <button type="submit">Submit</button>
+      </form>
+        <button class="record-button">
+            Record New Info
+        </button>    
+        <button class="delete-button">
+            Delete Account
+        </button>
+       <br></br>
+       <h2>Account Home</h2>
+      <div class="inside-box">
+          <h2>
+             Welcome, [username]
+          </h2>
+          <table>
+            <tr>
+              <th>Type</th>
+              <th>Value</th>
+              <th>Result</th>
+            </tr>
+            <tr>
+              <td>test1</td>
+              <td>test2</td>
+              <td>test3</td>
+            </tr>
+            
+          </table>
+         
+      </div>
+    </div>
+  </body>
+</html>

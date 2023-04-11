@@ -1,0 +1,12 @@
+runtime: python38 # or another supported version
+instance_class: F1 # this is the cheapest option
+env_variables:
+MYSQL_USER: <fill username>
+MYSQL_PASSWORD: <fill password>
+MYSQL_DB: 'symtocheck_database'
+MYSQL_HOST: <fill mysql gcp ip>
+handlers:
+- url: /script
+static_dir: static/script
+- url: /styles
+static_dir: static/styles

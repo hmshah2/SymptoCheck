@@ -1,0 +1,7 @@
+runtime: python38 # or another supported version
+instance_class: F1 # this is the cheapest option
+env_variables:
+MYSQL_USER: 'root'
+MYSQL_PASSWORD: 'team019'
+MYSQL_DB: 'symtocheck_database'
+MYSQL_HOST: '35.238.210.193'

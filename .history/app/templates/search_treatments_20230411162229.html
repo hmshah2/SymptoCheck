@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Search Treatments</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    
+    <style>
+      h2 {
+        font-family: 'Montserrat', sans-serif;
+      }
+
+      .header {
+        display: inline-flex;
+      }
+
+      .login {
+        display: inline-flex;
+        float: right;
+      }
+
+      p {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 27px;
+        font-weight: 200;
+        text-align: left;
+        margin-bottom: 15px;
+      }
+      .login-button {
+        background-color: rgb(202, 202, 214);
+        border: none;
+        height: 35px;
+        width: 60px;
+        border-radius: 10px;
+        cursor: pointer;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 18px;
+        transition: opacity 0.15s;
+        padding: 5px;
+      }
+
+      .login-button:hover {
+        opacity: 0.8;
+      }
+
+      .login-button:active {
+        opacity: 0.5;
+      }
+
+      .search-button {
+        background-color: rgb(202, 202, 214);
+        border: none;
+        height: 40px;
+        width: 40px;
+        border-radius: 10px;
+        cursor: pointer;
+        font-weight: bold;
+        transition: opacity 0.15s;
+        margin: auto;
+        margin-left: 5px;
+      }
+
+      .search-button:hover {
+        opacity: 0.8;
+      }
+
+      .search-button:active {
+        opacity: 0.5;
+      }
+
+      .search-bar {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 23px;
+        width: 450px;
+        padding: 5px;
+      }
+
+      .search_image {
+        width: 25px;
+        vertical-align: bottom;
+      }
+
+      .box {
+        padding-top: 25px;
+      }
+
+      .inside-box {
+        background-color: rgb(206, 228, 235);
+        margin: auto;
+        width: 50%;
+        border-radius: 10px;
+        padding-left: 3%;
+        padding-right: 3%;
+        padding-top: 15px;
+        padding-bottom: 3%;        
+      }
+
+      .inside-box2 {
+        background-color: rgb(206, 228, 235);
+        margin: auto;
+        width: 50%;
+        border-radius: 10px;
+        padding-left: 3%;
+        padding-right: 3%;
+        padding-top: 15px;
+        padding-bottom: 3%;   
+           
+      }
+      .left {
+        float: left;
+        width: 350px;
+        background-color: rgb(206, 228, 235);
+        border-radius: 10px;
+        padding-left: 3%;
+        padding-right: 3%;
+        padding-top: 15px;
+        padding-bottom: 40%;   
+      }
+      .right {
+        margin-left: 400px;
+        background-color: rgb(206, 228, 235);
+        border-radius: 10px;
+        padding-left: 3%;
+        padding-right: 3%;
+        padding-top: 15px;
+        padding-bottom: 40%; 
+      }
+      form {
+        padding-top: 15px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 23px;
+        padding-bottom: 20px;
+      }
+
+      label {
+        padding-left: 3%;
+        padding-right: 3%;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h2>
+      <div class="header">
+        SymptoCheck | Find treatments for your illnesses | <a href = "{{url_for('homepage')}}">Back to homepage</a>
+      </div>
+      <div class="login">
+        <form action = '/illpage/direct' method="get">
+        <button name = "redirect" class="login-button" >
+          Login
+        </button>
+      </form>
+      </div>
+    </h3>
+    <hr>
+    <div class="box">
+      <div class="inside-box">
+        <form id = "ill" method = "post" action = '/illpage/findIll'>
+          <p>
+            What illness do you want to know about?
+          </p>
+          <input class="search-bar" id="ill-input" name = "ill-input" type="text" placeholder="Type your illness here">
+          <div class="search-box">
+            <input type="submit" name = "action" value="search for treatments" src = "search_image.png">
+          </div>
+        <p>
+        <p> Do you want to know about sex statistics about many illness, click the button(it takes some time to load)</p>
+        </p>
+        <input type ="submit" name = "action" value = "know about sex statistics" src = "search_image.png">
+          </form>
+      </div>
+    </div>
+    <div class="box">
+      <div class="inside-box2" id="search-results">
+        <div class="left">
+          <p>
+            Possible Treatment
+          </p>
+            {% if results_Tre %}
+            {% for result in results_Tre['treatment'] %}
+            <p>{{ result }}</p>
+            <br>
+          {% endfor %}
+          {% endif %}
+        </div>
+        <div class = "right">
+          <p>
+            Sex Statistics
+          </p>
+          {% if results_Sex %}
+          {% for result in results_Sex %}
+          <p>{{ result }}</p>
+            <br>
+          {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

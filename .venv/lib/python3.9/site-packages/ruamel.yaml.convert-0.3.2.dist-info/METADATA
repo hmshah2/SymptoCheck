@@ -1,0 +1,36 @@
+Metadata-Version: 2.0
+Name: ruamel.yaml.convert
+Version: 0.3.2
+Summary: data format conversion routines to/from YAML
+Home-page: https://bitbucket.org/ruamel/yaml.convert
+Author: Anthon van der Neut
+Author-email: a.van.der.neut@ruamel.eu
+License: MIT license
+Platform: UNKNOWN
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Requires-Dist: python-dateutil
+Requires-Dist: ruamel.yaml (>=0.16.1)
+Provides-Extra: all
+Requires-Dist: beautifulsoup4; extra == 'all'
+Requires-Dist: python-dateutil; extra == 'all'
+Provides-Extra: csv
+Requires-Dist: python-dateutil; extra == 'csv'
+Provides-Extra: html
+Requires-Dist: beautifulsoup4; extra == 'html'
+
+format conversion routines to/from YAML
+=======================================
+
+The conversion process from other formats requires additional packages.
+These are not installed by default. To install all packages do::
+
+    pip install ruamel.yaml.convert[all]
+
+Instead of ``all`` you can provide ``html``, ``csv``, to install
+only the dependencies needed for those formats.
+
+
