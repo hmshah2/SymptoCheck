@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Account Home</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    
+    <style>
+      h2 {
+        font-family: 'Montserrat', sans-serif;
+      }
+      h3 {
+        font-family: 'Montserrat', sans-serif;
+      }
+      .header {
+        display: inline-flex;
+      }
+
+      .login {
+        display: inline-flex;
+        float: right;
+      }
+
+      p {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 20px;
+        font-weight: 200;
+        text-align: left;
+      }
+      
+      .select-sex {
+        font-family: 'Montserrat', sans-serif;
+      }
+
+
+      button {
+        background-color: rgb(202, 202, 214);
+        border: none;
+        height: 35px;
+        width: 60px;
+        border-radius: 10px;
+        cursor: pointer;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 18px;
+        transition: opacity 0.15s;
+        padding: 5px;
+      }
+    
+      button:hover {
+        opacity: 0.8;
+      }
+
+      button:active {
+        opacity: 0.5;
+      }
+
+      .delete-button {
+        background-color: rgb(245, 97, 97);
+        width: 160px;
+      }
+
+      .record-button {
+        width: 170px;
+      }
+
+      .right{
+      background-color: aliceblue;
+      width: 30%;
+      height: 15%;
+      display: inline-flex;
+      float: right;
+      
+    }
+      table {
+        font-family: 'Montserrat', sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+
+    }
+    th {
+        font-weight: 1400;
+        text-align: left;
+    padding: 8px;
+    }
+
+    td {
+
+    text-align: left;
+    padding: 8px;
+    }
+   
+        
+      .box {
+        padding-top: 25px;
+      }
+
+      .inside-box {
+        background-color: rgb(206, 228, 235);
+        margin: auto;
+        width: 80%;
+        border-radius: 10px;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 30px;
+        padding-bottom: 10%; 
+        display: inline-block;       
+      }
+    </style>
+  </head>
+  <body>
+    <h2>
+      <div class="header">
+        SymptoCheck | Find solutions for your symptoms | <a href = "{{url_for('homepage')}}"> Back to homepage</a>
+      </div>
+      
+
+    </h2>
+    <hr>
+    
+    <div class="box">
+      <form id="update"  method = "post" action = "/login/accounthome/updateacc">
+        <label for="password">Update Password:</label>  
+        <input type="text" id="password" name="password">
+        <input type="submit" value="confirm">
+      </form> 
+    </div>
+    <div class = "box">
+      <form id="delete"  class = "delete-button" method = "get" action = "/login/accounthome/deleteacc">
+        <input type="submit" value="delete account">
+      </form>
+    </div>
+    
+
+       <br></br>
+       <h2>Account Home</h2>
+      <div class="inside-box">
+          <h2>
+             Welcome! Here is your last search record.
+          </h2>
+          <table>
+            <tr>
+              <th>(Search/Top)Symptom</th>
+              <th>(Search/Top)Illness</th> 
+              <th>(Search/Top)Treatment</th>
+              <th>Search Time</th>
+            </tr>
+            {%for item in data%}
+            
+            <tr>
+              <td>{{item[0]}}</td>
+              <td>{{item[1]}}</td> 
+              <td>{{item[2]}}</td>
+              <td>{{item[3]}}</td>
+            </tr>
+            {% endfor %}
+          </table>
+
+         
+      </div>
+      <div class = "right">
+        <p">Administer Page</p>
+      </div>
+  </body>
+</html>
