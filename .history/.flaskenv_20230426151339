@@ -1,0 +1,2 @@
+export FLASK_APP=example
+export FLASK_DEBUG=1
