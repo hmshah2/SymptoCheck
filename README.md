@@ -6,7 +6,7 @@
 https://vimeo.com/823533564?share=copy
 
 ### Framework
-Frontend: HTML,CSS \ 
+Frontend: HTML,CSS 
 
 Backend: Flask
 
