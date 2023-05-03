@@ -11,8 +11,12 @@ Frontend: HTML,CSS
 Backend: Flask
 
 ### Run
-We have deployed this app on GCP. But you can also try it locally.
+We have deployed this app on GCP. Please visit:
+
 http://symptocheck.uc.r.appspot.com
+
+But you can also try it locally.
+
 Before running you need to install required packages by:
 ```
 pip install -r pip-requires.txt
