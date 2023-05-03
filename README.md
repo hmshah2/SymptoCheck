@@ -12,6 +12,10 @@ Backend: Flask
 
 ### Run
 We have deployed this app on GCP. But you can also try it locally.
+Before running you need to install required packages by:
+```
+pip install -r pip-requires.txt
+```
 ```
 source .venv/bin/activate
 flask run
